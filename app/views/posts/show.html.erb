@@ -1,0 +1,15 @@
+<div class="row" style="background: #e4d3d3;">
+  <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+    <div class="intro">
+      <span>
+        <%= link_to "Back", :back, class: 'btn btn-primary' %>
+      </span>
+      <h1 class="text-center"><%= @post.title %></h1>
+      <p class="text-center"><span class="date"><%= @post.created_at.strftime('%d %B %Y')%> </span></p>
+      <img class="img-fluid" src="<%= image_path('sample.jpeg') %>">
+    </div>
+    <div class="text">
+      <p><%= @post.description %></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="text-center"><h2>Post Mailer</h2></div>
+  <%= form_tag  mail_posts_path(), :method => :post, class: "form-inline" do %>
+    <div class="form-group row">
+      <label for="email" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <%= email_field_tag :email, params[:email], class: "form-control" %>
+      </div>
+    </div>
+    <br>
+    <div class="form-group row">
+      <label for="date" class="col-sm-2 col-form-label">Filter Date</label>
+      <div class="col-sm-10">
+        <%= date_field_tag :date, params[:date], class: "form-control", "data-provide" => 'datepicker' %>
+      </div>
+    </div>
+    <span class="alert-message" style="color: red; display: none;"></span>
+    <br>
+    <div class="form-group row">
+      <div class="col-sm-10 offset-sm-2">
+        <button type="submit" class="btn btn-primary send-btn">Send in mail</button>
+      </div>
+    </div>
+  <% end %>
+</div>
+<br>
+<%= render 'list', locals: {posts: @posts} %>

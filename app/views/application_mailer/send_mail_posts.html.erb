@@ -1,0 +1,17 @@
+<p>Hello <%= @email %>!</p>
+<p>
+  You have requested for post for the following date (<%= Date.parse(@date).strftime('%d %B %Y')%>).
+  Belwo are the links for the posts.
+</p>
+<ul style="list-style-type: number;">
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to post_url(post.id) do %>
+        <%= post.title %>
+        <span>Created at: <%= post.created_at.strftime('%d %B %Y') %></span>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+<p> Greetings! </p>
+<p>PostMailer Team</p>
